@@ -9,7 +9,7 @@ wget && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /
-ADD https://github.com/gophish/gophish/releases/download/v$RELEASE/gophish_linux_64bit.zip /tmp/
+ADD https://github.com/gophish/gophish/releases/download/v0.6.0/gophish-v0.6.0-linux-64bit.zip /tmp/
 RUN unzip /tmp/gophish_linux_64bit.zip && mv /gophish_linux_64bit /app && rm /tmp/gophish_linux_64bit.zip
 WORKDIR /app
 RUN sed -i "s|127.0.0.1|0.0.0.0|g" config.json
