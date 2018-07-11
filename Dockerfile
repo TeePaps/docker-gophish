@@ -10,7 +10,7 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /
 ADD https://github.com/gophish/gophish/releases/download/v0.6.0/gophish-v0.6.0-linux-64bit.zip /tmp/
-RUN unzip /tmp/gophish_linux_64bit.zip && mv /gophish_linux_64bit /app && rm /tmp/gophish_linux_64bit.zip
+RUN unzip /tmp/gophish-v0.6.0-linux-64bit.zip && mv /gophish-v0.6.0-linux-64bit /app && rm /tmp/gophish-v0.6.0-linux-64bit.zip
 WORKDIR /app
 RUN sed -i "s|127.0.0.1|0.0.0.0|g" config.json
 RUN sed -i "s|gophish.db|database/gophish.db|g" config.json
